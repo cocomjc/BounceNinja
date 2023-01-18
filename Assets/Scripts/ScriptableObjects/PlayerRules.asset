@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1974f61783a553943a0071122c4c296d, type: 3}
   m_Name: PlayerRules
   m_EditorClassIdentifier: 
-  speed: 30
+  speed: 50

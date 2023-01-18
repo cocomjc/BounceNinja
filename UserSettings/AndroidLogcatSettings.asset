@@ -10,21 +10,27 @@
     "m_KnownPackagesForSerialization": [
         {
             "deviceId": "22241FDEE002B5",
-            "name": "com.instagram.android",
-            "processId": 2093,
-            "exited": false
-        },
-        {
-            "deviceId": "22241FDEE002B5",
             "name": "com.google.android.apps.nexuslauncher",
             "processId": 19979,
-            "exited": false
+            "exited": true
         },
         {
             "deviceId": "22241FDEE002B5",
             "name": "com.android.settings",
             "processId": 5837,
-            "exited": false
+            "exited": true
+        },
+        {
+            "deviceId": "22241FDEE002B5",
+            "name": "com.snapchat.android",
+            "processId": 16332,
+            "exited": true
+        },
+        {
+            "deviceId": "22241FDEE002B5",
+            "name": "com.ChampStudio.BouceNinja",
+            "processId": 5702,
+            "exited": true
         }
     ],
     "m_Tags": {

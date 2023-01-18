@@ -11,10 +11,10 @@ public class PlayerManager : MonoBehaviour
 
 
     public void OnCollisionEnter(Collision collision) {
-        Debug.Log("OnColliderEnter");
         if (collision.gameObject.tag == "Wall")
         {
             moveDirection = Vector3.zero;
+            transform.forward = - (collision.contacts[0].point - transform.position).normalized;
             ninjaAnimator.SetTrigger("Grab");
             canJump = true;
         }
@@ -24,16 +24,36 @@ public class PlayerManager : MonoBehaviour
     {
         if (canJump)
         {
-            ninjaAnimator.SetTrigger("Jump");
-            canJump = false;
             moveDirection = (touchPos - transform.position).normalized;
-            Debug.Log("direction: " + moveDirection);
-            transform.forward = -moveDirection;
+            CheckDirection();
         }
     }
 
     private void Update()
     {
+        if (moveDirection == Vector3.zero)
+        {
+            GetComponent<Rigidbody>().velocity = Vector3.zero;
+            return;
+        }
         transform.position += moveDirection * playerRules.speed * Time.deltaTime;
+    }
+
+    private void CheckDirection()
+    {
+        GameObject[] walls = GameObject.FindGameObjectsWithTag("Wall");
+
+        foreach (GameObject wall in walls)
+        {
+            if (wall.GetComponent<BoxCollider>().bounds.Contains(transform.position + moveDirection * 1.5f))
+            {
+                Debug.Log("HUH");
+                moveDirection = Vector3.zero;
+                return;
+            }
+        }
+        ninjaAnimator.SetTrigger("Jump");
+        transform.forward = -moveDirection;
+        canJump = false;
     }
 }
