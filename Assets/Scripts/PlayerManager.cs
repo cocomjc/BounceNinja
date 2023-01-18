@@ -8,8 +8,7 @@ public class PlayerManager : MonoBehaviour
     [SerializeField] PlayerRules playerRules;
     [SerializeField] Animator ninjaAnimator;
     private bool canJump = true;
-
-
+    
     public void OnCollisionEnter(Collision collision) {
         if (collision.gameObject.tag == "Wall")
         {
