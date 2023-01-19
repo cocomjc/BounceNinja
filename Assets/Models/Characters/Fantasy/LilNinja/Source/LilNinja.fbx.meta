@@ -452,7 +452,7 @@ ModelImporter:
       name: SideJump
       takeName: Armature|ArmatureAction
       internalID: 0
-      firstFrame: 95
+      firstFrame: 99
       lastFrame: 101
       wrapMode: 0
       orientationOffsetY: 0
@@ -481,7 +481,7 @@ ModelImporter:
       name: WallGrab
       takeName: Armature|ArmatureAction
       internalID: 0
-      firstFrame: 164
+      firstFrame: 169
       lastFrame: 170
       wrapMode: 0
       orientationOffsetY: 0

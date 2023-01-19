@@ -7,6 +7,7 @@ public class PlayerManager : MonoBehaviour
     Vector3 moveDirection = Vector3.zero;
     [SerializeField] PlayerRules playerRules;
     [SerializeField] Animator ninjaAnimator;
+    [SerializeField] private GameObject jumpParticlesPrefab;
     private bool canJump = true;
     
     public void OnCollisionEnter(Collision collision) {
@@ -28,14 +29,14 @@ public class PlayerManager : MonoBehaviour
         }
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         if (moveDirection == Vector3.zero)
         {
             GetComponent<Rigidbody>().velocity = Vector3.zero;
             return;
         }
-        transform.position += moveDirection * playerRules.speed * Time.deltaTime;
+        GetComponent<Rigidbody>().velocity = moveDirection * playerRules.speed;
     }
 
     private void CheckDirection()
@@ -52,6 +53,7 @@ public class PlayerManager : MonoBehaviour
             }
         }
         ninjaAnimator.SetTrigger("Jump");
+        Instantiate(jumpParticlesPrefab, transform.position, Quaternion.identity);
         transform.forward = -moveDirection;
         canJump = false;
     }

@@ -3,7 +3,7 @@
     "m_SelectedPackage": {
         "deviceId": "22241FDEE002B5",
         "name": "com.ChampStudio.BouceNinja",
-        "processId": 9124,
+        "processId": 20190,
         "exited": false
     },
     "m_SelectedPriority": 0,
@@ -36,6 +36,12 @@
             "deviceId": "22241FDEE002B5",
             "name": "com.ChampStudio.BouceNinja",
             "processId": 9124,
+            "exited": false
+        },
+        {
+            "deviceId": "22241FDEE002B5",
+            "name": "com.ChampStudio.BouceNinja",
+            "processId": 20190,
             "exited": false
         }
     ],
